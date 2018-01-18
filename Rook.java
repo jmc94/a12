@@ -23,8 +23,9 @@ public class Rook extends ChessPiece{
 	
 	public static void main(String[] args) {
 		ChessBoard b = new ChessBoard();
-		Rook r = new Rook(b, Color.WHITE);
+		Rook r = new Rook(b, Color.BLACK);
 		System.out.println(r);
+		
 	}
 
 }

@@ -21,14 +21,45 @@ public abstract class ChessPiece {
     }
     
     public String getPosition() {
-    	return "hello";
+    	return rcToPos(row, column);
     }
     
     public void setPosition(String position) throws IllegalPositionException {
-    	
+    	int[] temp = board.posToIndex(position);
+    	row = temp[1];
+    	column = temp[0];
+    }
+    
+    public String rcToPos(int row, int column) {
+    	row +=1;
+    	String letter = "";
+    	switch(column) {
+    	case 0: letter = "a";
+    	break;
+    	case 1: letter = "b";
+    	break;
+    	case 2: letter = "c";
+    	break;
+    	case 3: letter = "d";
+    	break;
+    	case 4: letter = "e";
+    	break;
+    	case 5: letter = "f";
+    	break;
+    	case 6: letter = "g";
+    	break;
+    	case 7: letter = "h";
+    	}
+    	return letter + "" + row;
     }
     
     abstract public String toString();
     
     abstract public ArrayList<String> legalMoves();
+    
+    public static void main(String[] args) {
+    	ChessBoard b = new ChessBoard();
+    	Rook cp = new Rook(b, Color.BLACK);
+    	System.out.println(cp.rcToPos(7,7));
+    }
 }
