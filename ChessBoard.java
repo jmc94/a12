@@ -31,6 +31,29 @@ public class ChessBoard {
 		placePiece(bK2, "g8");
 		placePiece(wK1, "b1");
 		placePiece(wK2, "g1");
+		
+		Bishop bB1 = new Bishop(this, Color.BLACK);
+		Bishop bB2 = new Bishop(this, Color.BLACK);
+		
+		Bishop wB1 = new Bishop(this, Color.WHITE);
+		Bishop wB2 = new Bishop(this, Color.WHITE);
+		
+		placePiece(bB1, "c8");
+		placePiece(bB2, "f8");
+		placePiece(wB1, "c1");
+		placePiece(wB2, "f1");
+		
+		Queen bQ = new Queen(this, Color.BLACK);
+		Queen wQ = new Queen(this, Color.WHITE);
+		
+		placePiece(bQ, "d8");
+		placePiece(wQ, "d1");
+		
+		King bK = new King(this, Color.BLACK);
+		King wK = new King(this, Color.WHITE);
+		
+		placePiece(bK, "e8");
+		placePiece(wK, "e1");
 	}
 
 	public ChessPiece getPiece(String position) throws IllegalPositionException {
